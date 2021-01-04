@@ -1,0 +1,9 @@
+title: Home
+preset: page
+fields:
+    titulo:
+        label: Titulo
+        type: text
+    description:
+        label: Descripción
+        type: textarea

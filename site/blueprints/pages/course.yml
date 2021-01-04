@@ -1,0 +1,57 @@
+title: Course
+columns:
+  left:
+    width: 3/4
+    fields:
+      title1:
+        label: Title content 1
+        type: text
+      description:
+        label: Description content 1
+        type: textarea
+      published:
+        label: Published on
+        type: date
+        default: today
+      price:
+        label: Price
+        type: number
+        before: $
+        min: 0
+        step: 0.01
+      contenido:
+        label: List content
+        type: list
+      collapse1:
+        label: Title collapse 1
+        type: text
+      cc1:
+        label: Content collapse 1
+        type: textarea
+      collapse2:
+        label: Title collapse 2
+        type: text
+      cc2:
+        label: Content collapse 2
+        type: textarea
+      collapse3:
+        label: Title collapse 3
+        type: text
+      cc3:
+        label: Content collapse 3
+        type: textarea
+
+
+
+  right:
+    width: 1/4
+    fields:
+      image:
+        type: files
+        cover: true
+        ratio: 1/1
+        size: large
+
+
+
+

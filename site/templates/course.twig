@@ -1,0 +1,89 @@
+{% extends "@templates/default.twig" %}
+{% block content %}
+
+<div class="container mt-4 md-5">
+  <h1 class="text-muted d-flex justify-content-center ">{{page.title}} </h1>  
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 mt-12 d-flex justify-content-end">
+    
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h5 class="card-title">{{page.title1}}</h5>
+          <p class="card-text">{{ page.description.or('No content') }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="mt-4" id="accordion">
+        {% if page.collapse1.isNotEmpty() %}
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                {{page.collapse1}}
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse {{(page.collapse1) ? 'show'}}" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              {{page.cc1.or('No content') }}
+            </div>
+          </div>
+        </div>
+        {% endif  %}
+        {% if page.collapse2.isNotEmpty()  %}
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{page.collapse2}}
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse {{(page.collapse1 == "" and page.collapse2) ? 'show'}}" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              {{page.cc2.or('No content') }}
+            </div>
+          </div>
+        </div>
+        {% endif  %}
+        {% if page.collapse3.isNotEmpty()  %}
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{page.collapse3}}
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse {{(page.collapse1 == "" and page.collapse2 == "" and page.collapse3) ? 'show'}}" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              {{page.cc3.or('No content') }}
+            </div>
+          </div>
+        </div>
+        {% endif  %}
+      </div>
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card ">
+          {{(page.image) ? page.image.crop(500)| raw : 'no image' }}
+              <div class="card-body">
+                <h3>{{page.price.or('No Price')}}</h3>
+                
+                <button type="button" class="btn btn-primary w-100 p-3">Add to Cart</button>
+                <button type="button" class="btn btn-danger w-100 p-3 mt-3">Buy</button>
+
+                <div class="mt-4"><strong>Este curso incluye:</strong> </div>
+                <div class="mt-2">{{page.contenido.or(page.empty) | raw}}</div>
+                
+              
+              </div>
+          </div>          
+        </div>
+  </div>
+</div>
+
+{% endblock %}

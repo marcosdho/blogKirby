@@ -1,0 +1,35 @@
+{% extends "@templates/default.twig" %}
+{% block content %}
+
+<div class="container mt-5">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+    <h1 class="text-muted">{{page.titulo().or(page.title)}}</h1>
+    <div class="row">
+      {% for var in page.children().filterBy("template","course") %}
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-4">
+          <div class="card url" data-link="{{var.url}}">
+          {{(var.image) ? var.image.crop(500)| raw : 'no image' }}
+              <div class="card-body">
+              {{var.title}}         
+              </div>
+          </div>          
+        </div>
+        
+        {% endfor %}
+    </div>
+    
+  </div>
+</div>
+
+<script>  
+  let element = document.querySelectorAll('.url')
+    element.forEach((item,i)=>{
+      let attr = item.getAttribute('data-link')
+      item.style.cursor = 'pointer'
+      item.addEventListener('click',(e)=>{
+        window.location.href = attr
+      })
+    })
+</script>
+
+{% endblock %}

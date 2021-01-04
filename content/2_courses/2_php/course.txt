@@ -1,0 +1,51 @@
+Title: PHP
+
+----
+
+Title1: Title content 1
+
+----
+
+Description: Lorem ipsum dolor sit amet consectetur adipiscing elit sem, et a sociosqu aliquet augue lacinia aptent fusce pharetra, facilisi ut convallis quis mauris imperdiet per. Ac vulputate integer nostra et litora mollis curae cursus, montes faucibus tristique sollicitudin senectus at torquent risus, accumsan facilisi vivamus mi id tempor potenti. Luctus interdum platea taciti nascetur odio ultrices porta pretium consequat metus curae, feugiat fames rutrum ullamcorper senectus tempus aliquet imperdiet natoque litora.
+
+----
+
+Published: 2021-01-04
+
+----
+
+Price: 120000
+
+----
+
+Contenido: <ul><li><p>28 hours of video on demand</p><p>2 items</p><p>Lifetime access</p><p>Access on mobile devices and TV</p><p>Certificate of completion</p></li></ul>
+
+----
+
+Collapse1: Title collapse 1
+
+----
+
+Cc1: Content collapse 1
+
+----
+
+Collapse2: Title collapse 2
+
+----
+
+Cc2: Content collapse 2
+
+----
+
+Collapse3: Title collapse 3
+
+----
+
+Cc3: Content collapse 3
+
+----
+
+Image:
+
+- php.png
